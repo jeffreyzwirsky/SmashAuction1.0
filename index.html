@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMASH Scrap Management</title>
+    <meta name="description" content="SMASH – Scrap Management & Auction Platform">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Loading overlay (hidden by default) -->
+    <div id="loading-overlay" class="loading-overlay hidden">
+        <div class="loading-content">
+            <div class="spinner"></div>
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+
+    <!-- Login screen -->
+    <div id="login-screen" class="login-screen">
+        <div class="login-card">
+            <div class="login-header">
+                <div class="logo-circle">
+                    <span class="logo-letter">S</span>
+                </div>
+                <h1 class="login-title">SMASH</h1>
+                <p class="login-subtitle">Scrap Management & Systems Hub</p>
+            </div>
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <label for="login-username">Username</label>
+                    <input type="text" id="login-username" placeholder="Enter username" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter password" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-full">
+                    <i class="fas fa-sign-in-alt"></i>
+                    Sign In
+                </button>
+            </form>
+            <div class="demo-accounts">
+                <p class="demo-title">Demo Accounts</p>
+                <div class="demo-grid">
+                    <button class="demo-btn" data-user="admin" data-pass="admin">
+                        <i class="fas fa-crown"></i><span>Admin</span><small>admin / admin</small>
+                    </button>
+                    <button class="demo-btn" data-user="manager" data-pass="manager">
+                        <i class="fas fa-chart-line"></i><span>Manager</span><small>manager / manager</small>
+                    </button>
+                    <button class="demo-btn" data-user="operator" data-pass="operator">
+                        <i class="fas fa-user"></i><span>Operator</span><small>operator / operator</small>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main application container -->
+    <div id="app" class="main-app hidden">
+        <!-- Top navigation bar -->
+        <header class="top-nav">
+            <div class="nav-brand">
+                <div class="logo-circle small">
+                    <span class="logo-letter">S</span>
+                </div>
+                <span class="nav-title">SMASH</span>
+            </div>
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" id="global-search" placeholder="Search…" disabled>
+            </div>
+            <div class="user-profile">
+                <div class="user-info">
+                    <span id="user-name">User</span>
+                    <span id="user-role" class="user-role">Role</span>
+                </div>
+                <button id="logout-btn" class="btn btn-secondary small">
+                    <i class="fas fa-sign-out-alt"></i> Logout
+                </button>
+            </div>
+        </header>
+        <!-- Layout: sidebar + content -->
+        <div class="layout">
+            <nav id="sidebar" class="sidebar">
+                <!-- Sidebar content injected via JS -->
+            </nav>
+            <main id="main-content" class="main-content">
+                <!-- Module views injected via JS -->
+            </main>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
